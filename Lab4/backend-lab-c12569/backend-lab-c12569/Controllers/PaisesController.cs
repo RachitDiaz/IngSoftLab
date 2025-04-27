@@ -21,5 +21,24 @@ namespace backend_lab_c12569.Controllers
             return paises;
         }
 
+        [HttpPost]
+        public async Task<ActionResult> CrearPais(PaisModel pais)
+        {
+            try {
+                if (pais == null)
+                {
+                    return BadRequest("El pais no puede ser nulo");
+                }
+                PaisesHandler paisHandler = new PaisesHandler();
+                var resultado = paisHandler.CrearPais(pais);
+                return new JsonResult(resultado);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error creando el país");
+            }
+
+        }
+
     }
 }
