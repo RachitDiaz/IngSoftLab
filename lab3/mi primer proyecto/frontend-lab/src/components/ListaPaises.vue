@@ -51,16 +51,15 @@ export default {
             this.paises.splice(index, 1);
         },
         obtenerTareas() {
-            axios.get("https://localhost:7019/api/Paises").then(
+            axios.get("https://localhost:7294/api/Paises").then(
                 (response) => {
                     this.paises = response.data;
                 });
-        },
-        created: function () {
-            this.obtenerTareas();
-        },
-
+        }
     },
+    created() {
+        this.obtenerTareas();
+    }
 }
 </script>
 

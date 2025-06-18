@@ -53,7 +53,7 @@ export default {
     methods: {
         guardarPais() {
             console.log("Datos a guardar:", this.datosFormulario);
-            axios.post("https://localhost:7019/api/Paises", {
+            axios.post("https://localhost:7294/api/Paises", {
                 nombre: this.datosFormulario.nombre,
                 continente: this.datosFormulario.continente,
                 idioma: this.datosFormulario.idioma,
